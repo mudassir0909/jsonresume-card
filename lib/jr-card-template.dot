@@ -97,14 +97,13 @@
 
     <div class="jr-footer">
       <div class="jr-social-links">
-        <div class="jr-social-link"><a href="#"><i class="fa fa-linkedin"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-github"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-stack-overflow"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-codepen"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-twitter"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-facebook"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-dribbble"></i></a></div>
-        <div class="jr-social-link"><a href="#"><i class="fa fa-angellist"></i></a></div>
+        {{~it.social_links :social_link:index}}
+          <div class="jr-social-link">
+            <a href="{{=social_link.url}}" target="_blank">
+              <i class="fa fa-{{=social_link.network}}"></i>
+            </a>
+          </div>
+        {{~}}
       </div>
     </div>
   </div>
