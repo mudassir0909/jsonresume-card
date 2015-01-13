@@ -1,6 +1,6 @@
 .jr-card-theme-default,
 .jr-card-theme-minimal {
-  color: #777;
+  color: #777777;
 }
 .jr-card-theme-default .fa,
 .jr-card-theme-minimal .fa {
@@ -10,7 +10,6 @@
 .jr-card-theme-minimal .jr-card {
   background-color: white;
   font-family: 'Lato' sans-serif;
-  position: relative;
   border: 1px solid #efefef;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   display: block;
@@ -121,6 +120,7 @@
 }
 .jr-card-theme-default .jr-footer,
 .jr-card-theme-minimal .jr-footer {
+  position: relative;
   text-align: center;
   border-bottom: 0;
 }
@@ -204,11 +204,15 @@
 }
 .jr-card-theme-default .jr-profile-link,
 .jr-card-theme-minimal .jr-profile-link {
+  color: #777777;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: 10px;
+  top: 25px;
+}
+.jr-card-theme-default .jr-profile-link:hover,
+.jr-card-theme-minimal .jr-profile-link:hover {
+  text-decoration: underline;
+  color: #5e5e5e;
 }
 .jr-card-theme-default .jr-profile-picture-container {
   text-align: center;

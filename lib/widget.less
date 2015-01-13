@@ -2,6 +2,7 @@
 @profile-picture-width: 100px;
 @profile-picture-border: 5px;
 @display-name-left: @profile-picture-left + @profile-picture-width + 2*@profile-picture-border + 10px;
+@color: #777;
 
 .make-social-link(@color) {
   color: @color;
@@ -12,7 +13,7 @@
 }
 
 .base () {
-  color: #777;
+  color: @color;
 
   .fa {
     margin-right: 5px;
@@ -21,7 +22,6 @@
   .jr-card {
     background-color: white;
     font-family: 'Lato' sans-serif;
-    position: relative;
     border: 1px solid #efefef;
     box-shadow: 0 0 3px rgba(0,0,0,0.2);
     display: block;
@@ -133,6 +133,7 @@
   }
 
   .jr-footer {
+    position: relative;
     text-align: center;
     border-bottom: 0;
   }
@@ -184,11 +185,16 @@
   }
 
   .jr-profile-link {
+    @hover-color: darken(@color, 10%);
+    color: @color;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    right: 10px;
+    top: 25px;
+
+    &:hover {
+      text-decoration: underline;
+      color: @hover-color;
+    }
   }
 }
 

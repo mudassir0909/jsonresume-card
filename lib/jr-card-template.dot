@@ -104,6 +104,12 @@
             </a>
           </div>
         {{~}}
+
+        <small>
+          <a href="{{=it.profile_url}}" target="_blank" class="jr-profile-link">
+            View complete resume
+          </a>
+        </small>
       </div>
     </div>
   </div>
