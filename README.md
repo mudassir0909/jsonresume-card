@@ -1,4 +1,4 @@
-# stackoverflow-card
+# jsonresume-card
 Ember your resume summary into your website. You need to have your resume published using [jsonresume](https://jsonresume.org/)
 
 ![screenshot](https://raw.githubusercontent.com/mudassir0909/jsonresume-card/master/assets/img/jr-card.png)
