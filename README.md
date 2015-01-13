@@ -1,5 +1,5 @@
 # jsonresume-card
-Ember your resume summary into your website. You need to have your resume published using [jsonresume](https://jsonresume.org/)
+Embed your resume summary into your website. You need to have your resume published using [jsonresume](https://jsonresume.org/)
 
 ![screenshot](https://raw.githubusercontent.com/mudassir0909/jsonresume-card/master/assets/img/jr-card.png)
 
@@ -33,3 +33,6 @@ When you specify this as an option. The stylesheet related to this card is not d
 
 #### Note
 These cards are not inserted using `iframe`, so change the look and feel as you like using your website's css. You can find the css [here](https://github.com/mudassir0909/jsonresume-card/blob/master/widget.less). Feel free to override them classes !
+
+### Credits
+The UI is some what inspired from this [dribble shot](https://dribbble.com/shots/1048846-Author-Profile)
