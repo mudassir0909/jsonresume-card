@@ -11,7 +11,7 @@ Insert the following tag in your document where you wish to include the card.
 ```
 
 * `data-username` must be your jsonresume profile username(For example: my profile url is http://registry.jsonresume.org/mudassirali).
-* `data-theme` is the name of the theme you wish to use (default or minimal or custom). If no theme is specified the default theme `default` is used.
+* `data-theme` is the name of the theme you wish to use (default or minimal or custom). If no theme is specified the default theme `default` is used (This is not the jsonresume theme, this is specific to card only).
 
 In addition to that you need to include the following `script` tag & voila !
 ```html
