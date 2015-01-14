@@ -29,51 +29,42 @@ return tmpl;})();
                       config.username + '.json',
         fontawesome_url = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
         widget_stylesheet_url = "//mudassir0909.github.io/jsonresume-card/dist/1.0.0/jr-card-widget.min.css",
-        profile_url = '//registry.jsonresume.org/' + config.username;
+        profile_url = '//registry.jsonresume.org/' + config.username,
+        today = new Date();
 
     function getDatePair(work_info) {
         var start_date = new Date(work_info.startDate),
             end_date = work_info.endDate ? new Date(work_info.endDate) :
-                       new Date();
+                       today;
 
         return {
             start_date: start_date.getTime(),
-            end_date: end_date.getTime()
+            end_date: end_date.getTime(),
+            company: work_info.company
         };
     }
 
     function removeOverlaps(date_pairs) {
-        if (date_pairs.length <= 1) {
-            return date_pairs;
-        }
-
-        var dates_overlap, i, date_pair, previous_date_pair,
-            has_overlap = false,
-            consolidated_pairs = [];
+        var dates_overlap, i, date_pair,
+            previous_date_pair = date_pairs[0],
+            consolidated_pairs = [previous_date_pair];
 
         for(i=1; i<date_pairs.length; i++) {
             date_pair = date_pairs[i];
-            previous_date_pair = date_pairs[i-1];
+
             dates_overlap = (date_pair.start_date >= previous_date_pair.start_date &&
                                 date_pair.start_date < previous_date_pair.end_date );
 
             if (dates_overlap) {
-                has_overlap = true;
-
-                consolidated_pairs.push({
-                    start_date: previous_date_pair.start_date,
-                    end_date: Math.max(date_pair.end_date, previous_date_pair.end_date)
-                });
+                previous_date_pair.end_date =
+                    Math.max(date_pair.end_date, previous_date_pair.end_date);
             } else {
-                if (i===1) {
-                    consolidated_pairs.push(previous_date_pair);
-                }
-
                 consolidated_pairs.push(date_pair);
+                previous_date_pair = date_pair;
             }
         }
 
-        return (has_overlap ? removeOverlaps(consolidated_pairs) : consolidated_pairs);
+        return consolidated_pairs;
     }
 
     function getTotalExperience(work) {
@@ -140,7 +131,7 @@ return tmpl;})();
         profiles.forEach(function(profile) {
             var network = profile.network.toLowerCase();
 
-            if (supported_networks.indexOf(network) > 0 && (profile.url || profile.username)) {
+            if (supported_networks.indexOf(network) >= 0 && (profile.url || profile.username)) {
                 social_links.push({
                     network: network,
                     url: profile.url || getUrlForProfile(network, profile.username)
