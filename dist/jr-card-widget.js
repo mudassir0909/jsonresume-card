@@ -207,13 +207,13 @@ return tmpl;})();
         }
     }
 
-    // Downloading fontawesome
-    if (!config.has_fontawesome) {
-        insertStylesheet(fontawesome_url);
-    }
-
     // Downloading widget stylesheet
     if (config.theme !== 'custom') {
+        // Downloading fontawesome
+        if (!config.hasFontawesome) {
+            insertStylesheet(fontawesome_url);
+        }
+
         insertStylesheet(widget_stylesheet_url);
     }
 
