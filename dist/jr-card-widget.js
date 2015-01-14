@@ -27,9 +27,8 @@ return tmpl;})();
         request = new XMLHttpRequest(),
         request_url = "//registry.jsonresume.org/" +
                       config.username + '.json',
-        widget_stylesheet_url = "dist/jr-card-widget.css",
         fontawesome_url = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
-        // widget_stylesheet_url = "//mudassir0909.github.io/jsonresume-card/dist/1.0.0/jr-card-widget.min.css",
+        widget_stylesheet_url = "//mudassir0909.github.io/jsonresume-card/dist/1.0.0/jr-card-widget.min.css",
         profile_url = '//registry.jsonresume.org/' + config.username;
 
     function getDatePair(work_info) {
