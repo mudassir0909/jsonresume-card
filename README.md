@@ -3,6 +3,8 @@ Embed your resume summary into your website. You need to have your resume publis
 
 ![screenshot](https://raw.githubusercontent.com/mudassir0909/jsonresume-card/master/assets/img/jr-card.png)
 
+[Example Demo](http://codepen.io/thomasdavis/pen/gbmRXe)
+
 # Usage
 Insert the following tag in your document where you wish to include the card.
 **_This card occupies available parent container's `width`, so give some meaningful width to the parent element._**
